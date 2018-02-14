@@ -13,7 +13,7 @@ public class main
     /**
      * Constructor for objects of class main
      */
-    public main()
+    public void main()
     {
         console = new Scanner(System.in);
         
@@ -25,9 +25,6 @@ public class main
         
         if(askPlayer() == true){
             //Plays with bot
-  
-
-            //third play, check for winners after each play
             String winner = "";
             boardReset();
             while(winner.equals("")){
@@ -37,16 +34,14 @@ public class main
                 winner = chkWhoWon();
                 if(! winner.equals("")) break;
                 bot();
-                board();
+                //board();
                 winner = chkWhoWon();
             }
-            System.out.println("Winner is " + winner);
+            System.out.println("Winner is " + winner + "!");
+            reset();
         }
         else{
             //play without bot
-           
-            
-            //third play, check for winners after each play
             String winner = "";
             boardReset();
             while(winner.equals("")){
@@ -56,15 +51,22 @@ public class main
                 winner = chkWhoWon();
                 if(! winner.equals("")) break;
                 askSpot2();
-                board();
+                //board();
                 winner = chkWhoWon();
             }
-            System.out.println("Winner is " + winner);
-            
+            System.out.println("Winner is " + winner + "!");
+            reset();
             
             
         }
         
+    }
+    public void reset(){
+        System.out.println("Would you like to play again?");
+        String resetYes = console.next();
+        if(resetYes.equals("Yes")){
+            main();
+        }
     }
     public boolean askPlayer(){
         System.out.println("");
