@@ -20,7 +20,7 @@ public class main
         
         System.out.println("Game");
         System.out.println("");
-        Array = new String[3][3];
+        
         
         
         if(askPlayer() == true){
@@ -59,6 +59,13 @@ public class main
             
             
         }
+        
+    }
+    public void boardAsk(){
+        System.out.println("");
+        System.out.println("how big do you want your board?");
+        int colNum = console.nextInt();
+        Array = new String[3][3];
         
     }
     public void reset(){
